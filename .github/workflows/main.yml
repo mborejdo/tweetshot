@@ -14,8 +14,8 @@ jobs:
           cli: ''
           infile: '1463560516882866179'
           outfile: 'tweet.png'
-      - name: Uploading all PDFs
+      - name: Uploading all tweetshots
         uses: actions/upload-artifact@v2
         with:
-          name: PDF
+          name: tweet
           path: '/home/runner/work/_temp/_github_home/*.png'
