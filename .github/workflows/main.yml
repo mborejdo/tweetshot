@@ -12,7 +12,7 @@ jobs:
         with:
           mode: 'tweet'
           cli: ''
-          infile: '1463560516882866179'
+          infile: '20'
           outfile: 'tweet.png'
       - name: Uploading all tweetshots
         uses: actions/upload-artifact@v2
