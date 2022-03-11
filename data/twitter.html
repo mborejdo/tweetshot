@@ -8,7 +8,6 @@
 
 <script type='text/javascript'>
 $(document).ready(() => {
-    //287348974577385474
     let searchParams = new URLSearchParams(window.location.search);
 
     $.getJSON(`https://api.twitter.com/1/statuses/oembed.json?id=${searchParams.get("id")}&callback=?`, (data) =>{
