@@ -13,7 +13,7 @@ jobs:
           mode: 'tweet'
           cli: ''
           infile: '20'
-          outfile: 'tweet'
+          outfile: 'tweetx'
       - name: Uploading all tweetshots
         uses: actions/upload-artifact@v2
         with:
