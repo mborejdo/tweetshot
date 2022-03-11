@@ -13,7 +13,7 @@ jobs:
           mode: 'tweet'
           cli: ''
           infile: '1463560516882866179'
-          outfile: 'tweet'
+          outfile: 'tweet.png'
       - name: Uploading all PDFs
         uses: actions/upload-artifact@v2
         with:
