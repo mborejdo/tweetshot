@@ -1,0 +1,21 @@
+on: [push]
+
+jobs:
+  resume:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Generating word-cloud
+        id: tweet
+        uses: mborejdo/actions@refs/heads/master
+        with:
+          mode: 'tweet'
+          cli: ''
+          infile: '1463560516882866179'
+          outfile: 'tweet'
+      - name: Uploading all PDFs
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: '/home/runner/work/_temp/_github_home/*.pdf'
