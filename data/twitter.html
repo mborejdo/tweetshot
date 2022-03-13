@@ -5,11 +5,15 @@
 <meta charset="utf-8">
 <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-
+<style>
+    body, html {
+        background: #1b001b;
+    }
+</style>
 <script type='text/javascript'>
 $(document).ready(() => {
     let searchParams = new URLSearchParams(window.location.search);
-    $.getJSON(`https://api.twitter.com/1/statuses/oembed.json?id=${searchParams.get("id")}&callback=?`, (data) =>{
+    $.getJSON(`https://api.twitter.com/1/statuses/oembed.json?url=https://twitter.com/${searchParams.get("id")}&limit=1&theme=dark&callback=?`, (data) =>{
         $('#tweet').html(data.html);
     });
 });

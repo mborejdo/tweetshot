@@ -1,4 +1,8 @@
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron:  '40 * * * *'
 
 jobs:
   tweetshot:
@@ -12,7 +16,7 @@ jobs:
         with:
           mode: 'tweet'
           cli: ''
-          infile: '20'
+          infile: 'mediacoder'
           outfile: 'tweetx'
       - name: Uploading all tweetshots
         uses: actions/upload-artifact@v2
