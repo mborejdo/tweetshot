@@ -14,7 +14,7 @@
 $(document).ready(() => {
     let searchParams = new URLSearchParams(window.location.search);
     $.getJSON(`https://api.twitter.com/1/statuses/oembed.json?id=${searchParams.get("id")}&theme=dark&callback=?`, (data) =>{
-    //$.getJSON(`https://publish.twitter.com/oembed.json?url=https%3A%2F%2Ftwitter.com%2F${searchParams.get("id")}&width=500&limit=1&theme=dark&callback=?`, (data) =>{
+    // $.getJSON(`https://publish.twitter.com/oembed.json?url=https%3A%2F%2Ftwitter.com%2F${searchParams.get("id")}&width=500&limit=1&theme=dark&callback=?`, (data) =>{
         $('#tweet').html(data.html);
     });
 });
