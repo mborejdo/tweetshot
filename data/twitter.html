@@ -13,11 +13,12 @@
 <script type='text/javascript'>
 $(document).ready(() => {
     const searchParams = new URLSearchParams(window.location.search);
-    const mode = searchParams.get("mode");
-    const id = searchParams.get("id");
+    const data = searchParams.get("data");
+    parsedData = JSON.parse(decodeURIComponent(data));
+    const { id, mode } = parsedData;
     let url = `https://api.twitter.com/1/statuses/oembed.json?id=${id}&theme=dark&callback=?`;
     if (mode === "latest") {
-        url = `https://publish.twitter.com/oembed.json?url=https%3A%2F%2Ftwitter.com%2F${id}&width=570&limit=1&theme=dark&callback=?`;
+        url = `https://publish.twitter.com/oembed.json?url=https://twitter.com/${id}&callback=?`;
     }
     $.getJSON(url, (data) => {
         $('#tweet').html(data.html);

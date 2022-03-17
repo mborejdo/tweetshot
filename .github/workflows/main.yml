@@ -1,8 +1,6 @@
 on:
   push:
     branches: [ main ]
-  schedule:
-    - cron:  '40 * * * *'
 
 jobs:
   tweetshot:
@@ -16,7 +14,7 @@ jobs:
         with:
           mode: 'tweet'
           cli: ''
-          infile: 'twitter.html?id=20'
+          infile: 'twitter.html?data=%7B%22id%22%3A%2220%22%2C%20%22mode%22%3A%20%22xlatest%22%7D'
           outfile: 'tweetx'
       - name: Uploading all tweetshots
         uses: actions/upload-artifact@v2
